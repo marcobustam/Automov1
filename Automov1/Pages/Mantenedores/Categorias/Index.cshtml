@@ -1,0 +1,36 @@
+﻿@page
+@model Automov1.Pages.Mantenedores.Categorias.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria[0].NombreCategoria)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Categoria) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCategoria)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CategoriaID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CategoriaID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CategoriaID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

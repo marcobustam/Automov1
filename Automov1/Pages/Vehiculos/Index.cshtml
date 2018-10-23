@@ -1,0 +1,54 @@
+﻿@page
+@model Automov1.Pages.Vehiculos.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehiculo[0].MarcaID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehiculo[0].ModeloID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehiculo[0].Año)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehiculo[0].CategoriaID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Vehiculo) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MarcaID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModeloID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Año)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoriaID)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.VehiculoID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.VehiculoID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.VehiculoID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

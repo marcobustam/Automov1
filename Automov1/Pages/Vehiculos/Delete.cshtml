@@ -1,0 +1,46 @@
+﻿@page
+@model Automov1.Pages.Vehiculos.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Vehiculo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehiculo.MarcaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vehiculo.MarcaID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehiculo.ModeloID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vehiculo.ModeloID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehiculo.Año)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vehiculo.Año)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehiculo.CategoriaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Vehiculo.CategoriaID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Vehiculo.VehiculoID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
