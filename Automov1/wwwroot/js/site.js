@@ -2,3 +2,10 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
+$(document).ready(function () {
+    console.log("ready!");
+    $("#navbardrop").mouseover(function () {
+        console.log("<div>Handler for .mouseover() called.</div>");
+        $("#navbardrop").click();
+    });
+});
